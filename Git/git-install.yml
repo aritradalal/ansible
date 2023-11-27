@@ -1,0 +1,9 @@
+---
+- hosts: all
+  connection: local
+  tasks:
+    - name: Install Git
+      apt:
+        state: present
+        name: git
+      become: true

@@ -1,0 +1,35 @@
+#cloud-config
+users:
+  - name: adalal
+    gecos: Aritra Dalal
+    primary_group: adalal
+    groups: users, sudo, admin
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_import_id: 
+      - gh:aritradalal
+    lock_passwd: true
+    shell: /bin/bash
+  - name: ansible
+    groups: sudo, admin, lxd
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    ssh_authorized_keys:
+      - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBPQ++4dE84DD5TkpvoTLdhKPvZEasVUtJrzDxdrQFtH ansible@adalal.net"
+    shell: /bin/bash
+
+package_update: true
+package_upgrade: true
+packages:
+  - git
+  - acl
+  - docker.io
+  - docker-compose-v2
+  - net-tools
+
+byoby_by_default: enable-system
+
+final_message: |
+  cloud-init has finished
+  version: $version
+  timestamp: $timestamp
+  datasource: $datasource
+  uptime: $uptime
