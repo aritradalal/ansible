@@ -1,0 +1,7 @@
+---
+- hosts: all
+  tasks:
+    - name: Unconditionally reboot machines (defaults) in 60 seconds
+      ansible.builtin.reboot:
+        pre_reboot_delay: 60
+        msg: 'Rebooting machine in 1 minute'
