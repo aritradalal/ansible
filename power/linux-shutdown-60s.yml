@@ -1,7 +1,5 @@
 ---
-  - hosts: all
-    tasks:
-      - name: Shutdown system in 60 seconds
-        community.general.shutdown:
-          - delay: 60
-            msg: 'Server shutdown initiated by Ansible'
+  - name: Shutdown system in 60 seconds
+    community.general.shutdown:
+    - delay: 60
+      msg: 'Server shutdown initiated by Ansible'
