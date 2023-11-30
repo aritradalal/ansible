@@ -1,5 +1,5 @@
 ---
-- hosts: headscale_servers
+- hosts: all
   tasks:
   - name: allow port 81
     become: yes
