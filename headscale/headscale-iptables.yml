@@ -1,0 +1,10 @@
+---
+- hosts: headscale_servers
+    - name: allow port 81
+      become: yes
+      ansible.builtin.iptables:
+        chain: INPUT
+        action: append
+        protocol: tcp
+        destination_port: 81
+        comment: Set by Ansible
