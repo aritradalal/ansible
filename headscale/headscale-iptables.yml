@@ -1,5 +1,6 @@
 ---
 - hosts: headscale_servers
+  tasks:
   - name: allow port 81
     become: yes
     ansible.builtin.iptables:
