@@ -24,6 +24,8 @@ packages:
   - docker.io
   - docker-compose-v2
   - net-tools
+  - s3fs
+  - cachefilesd
 
 byoby_by_default: enable-system
 
